@@ -51,6 +51,32 @@ namespace Medical_Appointments.Migrations
                     b.HasIndex("PatientId");
 
                     b.ToTable("Appointments");
+
+                    b.HasData(
+                        new
+                        {
+                            AppointmentId = 1,
+                            AppointmentDate = new DateOnly(2026, 7, 1),
+                            DoctorId = 1,
+                            PatientId = 1,
+                            Status = "Pending"
+                        },
+                        new
+                        {
+                            AppointmentId = 2,
+                            AppointmentDate = new DateOnly(2026, 8, 1),
+                            DoctorId = 2,
+                            PatientId = 2,
+                            Status = "Pending"
+                        },
+                        new
+                        {
+                            AppointmentId = 3,
+                            AppointmentDate = new DateOnly(2026, 9, 1),
+                            DoctorId = 3,
+                            PatientId = 3,
+                            Status = "Pending"
+                        });
                 });
 
             modelBuilder.Entity("Medical_Appointments.Entities.AppointmentMedical", b =>
@@ -72,6 +98,29 @@ namespace Medical_Appointments.Migrations
                     b.HasIndex("ServiceId");
 
                     b.ToTable("Appointment_Services");
+
+                    b.HasData(
+                        new
+                        {
+                            AppointmentId = 1,
+                            ServiceId = 1,
+                            PerformedAt = new DateOnly(2026, 7, 1),
+                            Quantity = 1
+                        },
+                        new
+                        {
+                            AppointmentId = 2,
+                            ServiceId = 2,
+                            PerformedAt = new DateOnly(2026, 8, 1),
+                            Quantity = 1
+                        },
+                        new
+                        {
+                            AppointmentId = 3,
+                            ServiceId = 3,
+                            PerformedAt = new DateOnly(2026, 9, 1),
+                            Quantity = 1
+                        });
                 });
 
             modelBuilder.Entity("Medical_Appointments.Entities.Doctor", b =>
@@ -105,6 +154,32 @@ namespace Medical_Appointments.Migrations
                     b.HasKey("DoctorId");
 
                     b.ToTable("Doctors");
+
+                    b.HasData(
+                        new
+                        {
+                            DoctorId = 1,
+                            FirstName = "Maciej",
+                            LastName = "TezNowak",
+                            Phone = "423456789",
+                            Specialization = "Kardiologia"
+                        },
+                        new
+                        {
+                            DoctorId = 2,
+                            FirstName = "Adam",
+                            LastName = "Nowak",
+                            Phone = "523456789",
+                            Specialization = "TezNic"
+                        },
+                        new
+                        {
+                            DoctorId = 3,
+                            FirstName = "Anna",
+                            LastName = "Kowalska",
+                            Phone = "623456789",
+                            Specialization = "Nic"
+                        });
                 });
 
             modelBuilder.Entity("Medical_Appointments.Entities.Medical", b =>
@@ -134,6 +209,32 @@ namespace Medical_Appointments.Migrations
                     b.HasKey("ServiceId");
 
                     b.ToTable("Medical_Services");
+
+                    b.HasData(
+                        new
+                        {
+                            ServiceId = 1,
+                            Description = "bla bla bla",
+                            DurationInMinutes = 90,
+                            Name = "Zabieg1",
+                            Price = 100m
+                        },
+                        new
+                        {
+                            ServiceId = 2,
+                            Description = "bla bla bla",
+                            DurationInMinutes = 120,
+                            Name = "Zabieg3",
+                            Price = 200m
+                        },
+                        new
+                        {
+                            ServiceId = 3,
+                            Description = "bla bla bla",
+                            DurationInMinutes = 30,
+                            Name = "Zabieg3",
+                            Price = 300m
+                        });
                 });
 
             modelBuilder.Entity("Medical_Appointments.Entities.Patient", b =>
@@ -165,6 +266,32 @@ namespace Medical_Appointments.Migrations
                     b.HasKey("PatientId");
 
                     b.ToTable("Patients");
+
+                    b.HasData(
+                        new
+                        {
+                            PatientId = 1,
+                            DateOfBirth = new DateTime(2000, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FirstName = "John",
+                            LastName = "Doe",
+                            Phone = "123456789"
+                        },
+                        new
+                        {
+                            PatientId = 2,
+                            DateOfBirth = new DateTime(2000, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FirstName = "Alice",
+                            LastName = "Kowalska",
+                            Phone = "223456789"
+                        },
+                        new
+                        {
+                            PatientId = 3,
+                            DateOfBirth = new DateTime(2000, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FirstName = "Bob",
+                            LastName = "Nowak",
+                            Phone = "323456789"
+                        });
                 });
 
             modelBuilder.Entity("Medical_Appointments.Entities.Appointment", b =>
