@@ -1,5 +1,6 @@
 using Medical_Appointments.Data;
 using Medical_Appointments.DTOs;
+using Microsoft.EntityFrameworkCore;
 
 namespace Medical_Appointments.Services;
 
@@ -18,7 +19,7 @@ public class DbService : IDbService {
                 FirstName = patient.FirstName,
                 DateOfBirth = patient.DateOfBirth,
                 Phone = patient.Phone
-            }).ToList();
+            }).ToListAsync();
         return patients;
     }
 }
